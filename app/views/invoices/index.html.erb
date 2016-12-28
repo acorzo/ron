@@ -2,7 +2,7 @@
 
 <h1>Invoices</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Date</th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.date %></td>
+        <td><%= invoice.date.strftime "%d-%m-%Y %H:%M:%S" %></td>
         <td><%= invoice.customer %></td>
         <td><%= invoice.tax %></td>
         <td><%= invoice.vendor %></td>
