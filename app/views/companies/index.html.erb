@@ -2,7 +2,7 @@
 
 <h1>Companies</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -31,3 +31,11 @@
 <br>
 
 <%= link_to 'New Company', new_company_path %>
+
+<div>
+<h3>Import Companies</h3>
+ <%= form_tag import_companies_path, multipart: true do %>
+   <%= file_field_tag :file %>
+   <%= submit_tag "Upload Companies" %>
+ <% end %>
+</div>

@@ -61,6 +61,11 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def import
+    Company.import(params[:file])
+    redirect_to companies_path, notice: "Companies added successfully"
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
