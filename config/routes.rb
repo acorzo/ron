@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :purchases
   resources :employees
   root 'invoices#index'
  
@@ -7,6 +6,8 @@ Rails.application.routes.draw do
     collection { post :import }
   end  
  
-  resources :invoices
+  resources :invoices do
+    resources :purchases, except: [:index], controller: 'invoices/purchases'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
