@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :employees
   root 'invoices#index'
  
   resources :companies do 
